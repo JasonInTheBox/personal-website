@@ -149,7 +149,7 @@ export const projects: Project[] = [
     highlights: ["Cross-platform mobile", "Cloud data", "AI integration"],
     github: null,
     repositoryNote: "Academic project · source code cannot be released publicly",
-    dates: "January 2024 – March 2026",
+    dates: "January 2025 – March 2026",
     status: "Completed",
     details: {
       problem:
