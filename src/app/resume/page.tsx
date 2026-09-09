@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ResumeActions } from "@/components/ResumeActions";
+import { ResumePdfPreview } from "@/components/ResumePdfPreview";
 import { education, skillGroups } from "@/data/background";
 import { projects } from "@/data/projects";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Resume | Junjie Liu",
+  title: "Web Résumé | Junjie Liu",
   description:
-    "Junjie Liu’s software engineering resume, including education, technical skills, and selected projects.",
+    "Junjie Liu’s browser-friendly software engineering résumé, including education, technical skills, and selected projects.",
 };
 
 export default function ResumePage() {
@@ -28,18 +29,20 @@ export default function ResumePage() {
             />
           </figure>
           <div>
-            <p className="section-label">Resume</p>
+            <p className="section-label">Web résumé</p>
             <h1>{siteConfig.name}</h1>
             <p className="resume-role">{siteConfig.role}</p>
           </div>
         </div>
         <div className="resume-contact">
+          <ResumeActions />
           <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">
             LinkedIn ↗
           </a>
-          <ResumeActions />
         </div>
       </header>
+
+      <ResumePdfPreview />
 
       <div className="page-shell resume-content">
         <section className="resume-section resume-summary" aria-labelledby="resume-summary-title">
