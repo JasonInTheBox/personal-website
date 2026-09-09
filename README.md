@@ -1,47 +1,45 @@
-# Junjie Liu — Software Engineering Portfolio
+# Junjie Liu — Personal Portfolio Website
 
-A responsive personal portfolio built with Next.js 16, React, TypeScript, Tailwind CSS,
-and the App Router.
+This repository contains the source code for my personal portfolio website.
 
-## Run locally
+I built this site to showcase my software engineering projects, technical experience, and background as a recent Computer Science graduate from UC Santa Barbara currently seeking full-time Software Engineering opportunities.
 
-```bash
-npm install
-npm run dev
-```
+## Live Website
 
-Open [http://localhost:3000](http://localhost:3000).
+[View Portfolio](https://personal-website-junjie-liu.vercel.app/)
 
-## Pages
+## Contact
 
-- `/` — introduction, selected work, engineering approach, and contact callout
-- `/projects` — complete project index
-- `/projects/[slug]` — reusable case studies generated from project data
-- `/about` — personal background, interests, and working style
-- `/background` — education, coursework, technical toolkit, and spoken languages
-- `/resume` — web resume
-- `/contact` — email and LinkedIn contact options
+**Junjie Liu**
 
-## Content
+* LinkedIn: https://www.linkedin.com/in/junjie-liu05/
+* GitHub: [https://github.com/JasonInTheBox](https://github.com/JasonInTheBox)
+* Email: junjie.6liu@gmail.com
 
-- Profile links and contact details live in `src/data/site.ts`.
-- Project summaries and case studies live in `src/data/projects.ts`.
-- Education, coursework, skills, and languages live in `src/data/background.ts`.
-- About and resume narrative content lives in their respective page components.
+## About
 
-The project data drives the homepage carousel, project index, static case-study routes,
-page metadata, resume entries, and related-project links.
+The website is designed to provide a quick overview of my work while keeping more detailed project information on dedicated pages.
 
-## Quality checks
+Featured projects include:
 
-```bash
-npm run lint
-npm run build
-```
+* **League Assistant** — Desktop companion application integrating with the League of Legends client using Electron, WebSockets, APIs, and recommendation logic.
+* **Planet Story Explorer** — Interactive geospatial exploration platform for 35,000+ Planet Stories with AI-assisted search and discovery.
+* **DireConnect** — Full-stack business campaign management application with authentication, authorization, REST APIs, and PostgreSQL.
+* **SkillScan** — Mobile application built with React Native and AI integration.
 
-## Deploy to Vercel
+## Tech Stack
 
-1. Push the repository to GitHub.
-2. Import it in Vercel.
-3. Keep the detected Next.js defaults and deploy.
-4. After the production URL is known, set `metadataBase` in `src/app/layout.tsx`.
+* **Framework:** Next.js
+* **Frontend:** React, TypeScript, Tailwind CSS
+* **Routing:** Next.js App Router
+* **Deployment:** Vercel
+
+## Deployment
+
+The site is deployed using Vercel and automatically redeploys when changes are pushed to the main branch.
+
+## License
+
+This website and its source code are intended as my personal portfolio.
+
+Feel free to reference the implementation for learning purposes, but please do not copy the design, content, or personal information and present it as your own.
