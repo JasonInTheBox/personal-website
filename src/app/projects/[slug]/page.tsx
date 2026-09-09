@@ -46,6 +46,17 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
         <p className="case-eyebrow">{project.eyebrow}</p>
         <p className="case-meta">{project.dates} · {project.status}</p>
+        {project.github || project.repositoryNote ? (
+          <section className="case-links" aria-label="Project links">
+            {project.github ? (
+              <a href={project.github} target="_blank" rel="noreferrer">
+                <GitHubIcon /> View repository <ArrowUpRightIcon />
+              </a>
+            ) : project.repositoryNote ? (
+              <span className="repository-note">{project.repositoryNote}</span>
+            ) : null}
+          </section>
+        ) : null}
         <h1>{project.title}</h1>
         <p className="case-summary">{project.description}</p>
         <ul className="case-tech" aria-label="Technologies used">
@@ -53,6 +64,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             <li key={technology}>{technology}</li>
           ))}
         </ul>
+        
       </header>
 
       <div className="page-shell case-content">
