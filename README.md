@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Junjie Liu — Software Engineering Portfolio
 
-## Getting Started
+A responsive personal portfolio built with Next.js 16, React, TypeScript, Tailwind CSS,
+and the App Router.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/` — introduction, selected work, engineering approach, and contact callout
+- `/projects` — complete project index
+- `/projects/[slug]` — reusable case studies generated from project data
+- `/about` — personal background, interests, and working style
+- `/background` — education, coursework, technical toolkit, and spoken languages
+- `/resume` — web resume
+- `/contact` — email and LinkedIn contact options
 
-## Learn More
+## Content
 
-To learn more about Next.js, take a look at the following resources:
+- Profile links and contact details live in `src/data/site.ts`.
+- Project summaries and case studies live in `src/data/projects.ts`.
+- Education, coursework, skills, and languages live in `src/data/background.ts`.
+- About and resume narrative content lives in their respective page components.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project data drives the homepage carousel, project index, static case-study routes,
+page metadata, resume entries, and related-project links.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Quality checks
 
-## Deploy on Vercel
+```bash
+npm run lint
+npm run build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy to Vercel
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Push the repository to GitHub.
+2. Import it in Vercel.
+3. Keep the detected Next.js defaults and deploy.
+4. After the production URL is known, set `metadataBase` in `src/app/layout.tsx`.
