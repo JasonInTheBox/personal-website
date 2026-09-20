@@ -43,6 +43,7 @@ export const projects: Project[] = [
     ],
     highlights: ["Real-time event handling", "Desktop client integration", "Recommendation logic"],
     github: "https://github.com/JasonInTheBox/LeagueAssistant",
+    repositoryNote: "Private GitHub page - due to Riot developer policies, the source code cannot be publicized as the project is still in review.",
     dates: "August 2026 – Present",
     status: "In progress",
     details: {
