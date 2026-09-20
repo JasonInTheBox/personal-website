@@ -45,7 +45,7 @@ export const projects: Project[] = [
     github: "https://github.com/JasonInTheBox/LeagueAssistant",
     repositoryNote: "Private GitHub page - due to Riot developer policies, the source code cannot be publicized as the project is still in review.",
     dates: "August 2026 – Present",
-    status: "In progress",
+    status: "In progress - due to Riot developer policy, code is under review.",
     details: {
       problem:
         "Champion select moves quickly, while useful information about roles, runes, and matchups is spread across several sources. The project brings that context into a companion that responds to the local game client in real time.",
