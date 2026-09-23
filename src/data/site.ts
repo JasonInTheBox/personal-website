@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Junjie Liu",
   role: "Software Engineer · Recent UCSB CS Graduate",
-  linkedin: "https://www.linkedin.com/in/junjie-liu1/",
+  linkedin: "https://www.linkedin.com/in/junjie-liu05/",
   github: "https://github.com/JasonInTheBox",
   email: "junjie.6liu@gmail.com",
   resumePdf: "/resume/Junjie_Liu_Resume.pdf",
