@@ -46,7 +46,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </div>
         <p className="case-eyebrow">{project.eyebrow}</p>
         <p className="case-meta">{project.dates} · {project.status}</p>
-        {project.github || project.repositoryNote ? (
+        {project.github || project.website || project.repositoryNote ? (
           <section className="case-links" aria-label="Project links">
             {project.github ? (
               <a href={project.github} target="_blank" rel="noreferrer">
@@ -54,6 +54,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </a>
             ) : project.repositoryNote ? (
               <span className="repository-note">{project.repositoryNote}</span>
+            ) : null}
+            {project.website ? (
+              <a href={project.website} target="_blank" rel="noreferrer">
+                Visit website <ArrowUpRightIcon />
+              </a>
             ) : null}
           </section>
         ) : null}
@@ -110,7 +115,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </section>
 
-        {project.github || project.repositoryNote ? (
+        {project.github || project.website || project.repositoryNote ? (
           <section className="case-links" aria-label="Project links">
             {project.github ? (
               <a href={project.github} target="_blank" rel="noreferrer">
@@ -118,6 +123,11 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </a>
             ) : project.repositoryNote ? (
               <span className="repository-note">{project.repositoryNote}</span>
+            ) : null}
+            {project.website ? (
+              <a href={project.website} target="_blank" rel="noreferrer">
+                Visit website <ArrowUpRightIcon />
+              </a>
             ) : null}
           </section>
         ) : null}

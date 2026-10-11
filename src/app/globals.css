@@ -1852,9 +1852,11 @@ button {
   line-height: 1.5;
 }
 
-.case-content .case-links {
+.case-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
   padding-bottom: 0;
 }
 
@@ -2526,10 +2528,6 @@ button {
   .contact-channel-list > div {
     grid-template-columns: 42px 1fr auto;
     gap: 0.85rem;
-  }
-
-  .case-content .case-links {
-    display: grid;
   }
 
 }

@@ -27,6 +27,21 @@ const qualities = [
   },
 ];
 
+const currentFocusDetails = [
+  {
+    title: "Building ML foundations",
+    text: "I’m strengthening my Python skills while learning the ideas behind machine-learning systems and how they can solve practical problems.",
+  },
+  {
+    title: "Exploring the tools",
+    text: "I’m exploring PyTorch and TensorFlow to understand the frameworks and workflows used to experiment with machine-learning models.",
+  },
+  {
+    title: "Bringing ML into existing apps",
+    text: "I’m looking for ways to integrate useful machine-learning techniques into products like LeagueComp, connecting what I learn to real application needs.",
+  },
+];
+
 const personalDetails = [
   {
     title: "Reading",
@@ -119,6 +134,23 @@ export default function AboutPage() {
             <article key={quality.title}>
               <h3>{quality.title}</h3>
               <p>{quality.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-shell about-detail-section" aria-labelledby="current-focus-title">
+        <div className="about-section-heading">
+          <p className="section-label">What I’m currently doing</p>
+          <h2 id="current-focus-title">Exploring AI and machine learning.</h2>
+        </div>
+        <div className="about-detail-list">
+          {currentFocusDetails.map((detail) => (
+            <article key={detail.title}>
+              <div>
+                <h3>{detail.title}</h3>
+                <p>{detail.text}</p>
+              </div>
             </article>
           ))}
         </div>

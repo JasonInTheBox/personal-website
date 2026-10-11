@@ -7,6 +7,7 @@ export type Project = {
   technologies: string[];
   highlights: string[];
   github: string | null;
+  website?: string;
   repositoryNote?: string;
   dates: string;
   status: string;
@@ -43,6 +44,7 @@ export const projects: Project[] = [
     ],
     highlights: ["Real-time event handling", "Desktop client integration", "Recommendation logic"],
     github: "https://github.com/JasonInTheBox/LeagueAssistant",
+    website: "https://leaguecomp.vercel.app/",
     repositoryNote: "Private GitHub page - due to Riot developer policies, the source code cannot be publicized as the project is still in review.",
     dates: "August 2026 – Present",
     status: "In progress - due to Riot developer policy, code is under review.",
@@ -103,38 +105,44 @@ export const projects: Project[] = [
   {
     slug: "direconnect",
     title: "DireConnect",
-    eyebrow: "Cloud application · Practice project",
+    eyebrow: "Full-stack web application · Practice project",
     description:
-      "An unlaunched practice project for small-business owners to organize customer outreach and send SMS and email campaigns, with an emphasis on AWS and cloud architecture.",
+      "An actively developed full-stack practice project for small businesses to manage customer data and run targeted email outreach.",
     built:
-      "Built the core business-owner workflow for managing businesses and customer data, composing SMS and email campaigns, and sending outreach through a permission-aware REST API. The project remained a learning build focused on AWS, cloud deployment, authentication, and relational data; customizable loyalty and referral features were planned but not completed.",
+      "The current build supports business and customer management, email campaign creation and scheduling, audience previews, unsubscribe handling, and delivery logs. BullMQ and Redis queue campaign jobs for a separate worker, while authentication and business-level checks protect customer data. Live email delivery is explicitly configured; development uses a safe simulation. SMS sending and the planned loyalty and referral features are not part of the current build, and the practice project has not officially launched.",
     technologies: [
       "Next.js",
+      "React",
+      "TypeScript",
       "Express",
       "PostgreSQL",
-      "Supabase Auth",
       "Prisma",
+      "Supabase Auth",
+      "BullMQ",
+      "Redis",
+      "Resend",
       "Zod",
-      "AWS",
+      "Sentry",
     ],
-    highlights: ["SMS & email campaigns", "AWS & cloud practice", "Business-owned customer data"],
+    highlights: ["Email campaigns & delivery logs", "Queued campaign processing", "Business-owned customer data"],
     github: "https://github.com/JasonInTheBox/DireConnect",
-    dates: "April 2026 – June 2026",
-    status: "Paused · may revisit",
+    website: "https://direconnect.app/",
+    dates: "April 2026 – Present",
+    status: "In progress",
     details: {
       problem:
-        "Small businesses often compete for attention without the advertising budgets or customer-engagement systems available to larger companies. DireConnect explored a direct, business-controlled way to maintain customer relationships and run repeat outreach through SMS and email.",
+        "Small businesses often compete for attention without the advertising budgets or customer-engagement systems available to larger companies. DireConnect explores a direct, business-controlled way to manage customer relationships and run repeat email outreach.",
       architecture: [
-        "Next.js and React provide the business-owner interface for contacts and campaigns.",
-        "An Express REST API handles business, customer, and campaign workflows separately from the frontend.",
-        "Prisma and PostgreSQL model businesses, customer records, campaigns, and ownership boundaries.",
-        "Supabase Auth and Zod support authentication, authorization, and request validation.",
-        "AWS services and cloud deployment work provided the project’s primary infrastructure learning focus.",
+        "A Next.js, React, and TypeScript web app provides the business-owner interface for customer and campaign workflows.",
+        "An Express REST API handles business, customer, and campaign operations separately from the frontend.",
+        "Prisma and PostgreSQL store business, customer, campaign, and delivery data; Supabase Auth handles sign-in, with Zod validating requests.",
+        "BullMQ and Redis queue campaign jobs for a separate worker, which uses Resend when live email delivery is enabled.",
+        "Deployment separates the web app on Vercel, API on Render, and worker on Railway, with Supabase for managed data and Sentry for error monitoring.",
       ],
       engineering: [
-        "Turning the product idea into working SMS and email campaign flows while leaving loyalty and referrals as future scope.",
-        "Enforcing business ownership and validation rules beyond basic sign-in.",
-        "Practicing AWS deployment and cloud integration decisions in an application that had not yet launched.",
+        "Connecting audience previews, scheduled campaigns, background processing, unsubscribe handling, and delivery logs into one workflow.",
+        "Keeping customer and campaign records scoped to the owning business across the interface and API.",
+        "Separating web, API, and worker processes while keeping live email delivery gated and development safely simulated.",
       ],
     },
   },

@@ -6,7 +6,7 @@ I built this site to showcase my software engineering projects, technical experi
 
 ## Live Website
 
-[View Portfolio](https://personal-website-junjie-liu.vercel.app/)
+[View Portfolio](https://junjieliu.dev/)
 
 ## Contact
 
