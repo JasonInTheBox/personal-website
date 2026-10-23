@@ -16,8 +16,9 @@ export default function ProjectsPage() {
         <h1>Projects that taught me to see the whole system.</h1>
         <div>
           <p>
-            Desktop clients, campaign workflow, geospatial search, and mobile AI—built
-            by following each problem across the interface, API, and data layer.
+            Desktop clients, campaign workflows, geospatial search, mobile AI, and a
+            bilingual Analects learning app in progress—each shaped by the connections
+            between its interface, API, and data layer.
           </p>
         </div>
       </header>

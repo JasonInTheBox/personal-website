@@ -94,7 +94,10 @@ export default function ResumePage() {
                   <span>{project.dates} · {project.status}</span>
                 </div>
                 <p>{project.description}</p>
-                <small>{project.technologies.join(" · ")}</small>
+                <small>
+                  {project.stackLabel ? `${project.stackLabel}: ` : ""}
+                  {project.technologies.join(" · ")}
+                </small>
               </article>
             ))}
           </div>

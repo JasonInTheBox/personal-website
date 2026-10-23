@@ -4,6 +4,7 @@ import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://junjieliu.dev"),
   title: "Junjie Liu | New Grad Software Engineer",
   description:
     "Junjie Liu is a recent UC Santa Barbara Computer Science graduate building full-stack, AI-powered, desktop, web, and mobile applications.",

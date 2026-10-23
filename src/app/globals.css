@@ -452,6 +452,7 @@ button {
 .project-slide-2 { background: #c8dceb; }
 .project-slide-3 { background: #bcdedb; }
 .project-slide-4 { background: #d0d9ea; }
+.project-slide-5 { background: #d7d5e8; }
 
 .slide-copy {
   min-width: 0;
@@ -1589,6 +1590,7 @@ button {
 .index-project-2 { --project-card-color: #b6cfe3; }
 .index-project-3 { --project-card-color: #a9d4d1; }
 .index-project-4 { --project-card-color: #bdcbe0; }
+.index-project-5 { --project-card-color: #c5c2dd; }
 
 .index-project-header {
   display: grid;
@@ -1698,6 +1700,7 @@ button {
 .case-study-2 { --project-color: #c8dceb; }
 .case-study-3 { --project-color: #bcdedb; }
 .case-study-4 { --project-color: #d0d9ea; }
+.case-study-5 { --project-color: #d7d5e8; }
 
 .case-hero {
   padding-block: clamp(4.5rem, 9vw, 8rem) clamp(3rem, 6vw, 5rem);
@@ -1775,12 +1778,27 @@ button {
 }
 
 .case-large-copy,
-.case-built > p:not(.section-label) {
+.case-built > p:not(.section-label):not(.case-reference) {
   max-width: 760px;
   margin: 2.5rem 0 0 auto;
   font-size: clamp(1.2rem, 2vw, 1.65rem);
   letter-spacing: -0.012em;
   line-height: 1.55;
+}
+
+.case-built > .case-reference {
+  max-width: 760px;
+  margin: 1.25rem 0 0 auto;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  line-height: 1.6;
+}
+
+.case-reference a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .case-built > ul {
@@ -2471,7 +2489,11 @@ button {
   }
 
   .case-large-copy,
-  .case-built > p:not(.section-label) {
+  .case-built > p:not(.section-label):not(.case-reference) {
+    margin-left: 0;
+  }
+
+  .case-built > .case-reference {
     margin-left: 0;
   }
 

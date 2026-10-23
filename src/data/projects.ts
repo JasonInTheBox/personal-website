@@ -9,8 +9,11 @@ export type Project = {
   github: string | null;
   website?: string;
   repositoryNote?: string;
+  references?: { label: string; url: string }[];
   dates: string;
   status: string;
+  phase?: "in-progress";
+  stackLabel?: string;
   details: {
     problem: string;
     architecture: string[];
@@ -20,6 +23,7 @@ export type Project = {
 
 const projectOrder = [
   "league-assistant",
+  "mushroom-zi",
   "direconnect",
   "planet-story-explorer",
   "skillscan",
@@ -107,7 +111,7 @@ export const projects: Project[] = [
     title: "DireConnect",
     eyebrow: "Full-stack web application · Practice project",
     description:
-      "An actively developed full-stack practice project for small businesses to manage customer data and run targeted email outreach.",
+      "An actively developed full-stack practice project for small businesses to manage customer data and run targeted email outreach. Its UI is currently undergoing an overhaul.",
     built:
       "The current build supports business and customer management, email campaign creation and scheduling, audience previews, unsubscribe handling, and delivery logs. BullMQ and Redis queue campaign jobs for a separate worker, while authentication and business-level checks protect customer data. Live email delivery is explicitly configured; development uses a safe simulation. SMS sending and the planned loyalty and referral features are not part of the current build, and the practice project has not officially launched.",
     technologies: [
@@ -173,6 +177,48 @@ export const projects: Project[] = [
         "Coordinating data and authentication across mobile, cloud, and backend layers.",
         "Designing frontend/backend communication for a cross-platform client.",
         "Collaborating on an application whose features span several services.",
+      ],
+    },
+  },
+  {
+    slug: "mushroom-zi",
+    title: "Mushroom Zi",
+    eyebrow: "Bilingual learning · Chinese literature",
+    description:
+      "An in-progress learning app for studying the Analects in English and Traditional Chinese, with Simplified Chinese planned after the MVP.",
+    built:
+      "The MVP is planned for English and Traditional Chinese, with Simplified Chinese to follow. A planned AI chatbot will answer questions about the Analects and offer modern scenarios for reflection. Charles Muller’s translation is the current reference; the AI framework and model choices are still open.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "FastAPI"],
+    highlights: [
+      "English + Traditional Chinese · MVP",
+      "Simplified Chinese · planned next",
+      "AI Q&A · planned",
+      "Modern scenarios · planned",
+    ],
+    github: "https://github.com/JasonInTheBox/MushroomZi",
+    references: [
+      {
+        label: "Charles Muller’s translation of the Analects",
+        url: "http://www.acmuller.net/con-dao/analects.html",
+      },
+    ],
+    dates: "October 2026",
+    status: "In progress",
+    phase: "in-progress" as const,
+    stackLabel: "Planned stack",
+    details: {
+      problem:
+        "The Analects can feel distant when readers lack a bridge between its concise teachings and everyday decisions. Mushroom Zi aims to pair English and Traditional Chinese study with guided questions and practical scenarios that help learners consider how the ideas apply today.",
+      architecture: [
+        "Next.js, React, TypeScript, and Tailwind CSS are the planned frontend stack for English and Traditional Chinese study, with Simplified Chinese planned after the MVP.",
+        "FastAPI is planned for backend learning workflows and requests to the AI assistant.",
+        "Charles Muller’s translation is the current reference text for exploring the Analects.",
+        "The AI model, framework, and supporting data approach are still to be decided.",
+      ],
+      engineering: [
+        "Preserving passage context and meaning across English and Chinese.",
+        "Designing chatbot answers around the chosen text and communicating interpretive nuance.",
+        "Creating modern scenarios that make the teachings easier to reflect on and discuss.",
       ],
     },
   },

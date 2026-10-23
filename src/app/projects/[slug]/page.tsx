@@ -64,7 +64,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         ) : null}
         <h1>{project.title}</h1>
         <p className="case-summary">{project.description}</p>
-        <ul className="case-tech" aria-label="Technologies used">
+        <ul
+          className="case-tech"
+          aria-label={project.stackLabel ?? "Technologies used"}
+        >
           {project.technologies.map((technology) => (
             <li key={technology}>{technology}</li>
           ))}
@@ -80,9 +83,23 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         <section className="case-built" aria-labelledby="built-title">
-          <p className="section-label">What I built</p>
-          <h2 id="built-title">From interface to underlying system.</h2>
+          <p className="section-label">
+            {project.phase === "in-progress" ? "What I’m building" : "What I built"}
+          </p>
+          <h2 id="built-title">
+            {project.phase === "in-progress"
+              ? "A bilingual path into the Analects."
+              : "From interface to underlying system."}
+          </h2>
           <p>{project.built}</p>
+          {project.references?.map((reference) => (
+            <p className="case-reference" key={reference.url}>
+              Text reference: {" "}
+              <a href={reference.url} target="_blank" rel="noreferrer">
+                {reference.label}
+              </a>
+            </p>
+          ))}
           <ul>
             {project.highlights.map((highlight) => (
               <li key={highlight}>{highlight}</li>
@@ -92,8 +109,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <section className="architecture" aria-labelledby="architecture-title">
           <div>
-            <p className="section-label">System outline</p>
-            <h2 id="architecture-title">How the pieces connect.</h2>
+            <p className="section-label">
+              {project.phase === "in-progress" ? "Planned system outline" : "System outline"}
+            </p>
+            <h2 id="architecture-title">
+              {project.phase === "in-progress"
+                ? "How the pieces are intended to connect."
+                : "How the pieces connect."}
+            </h2>
           </div>
           <ol>
             {project.details.architecture.map((item, index) => (
@@ -106,8 +129,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         <section className="decisions" aria-labelledby="decisions-title">
-          <p className="section-label">Engineering focus</p>
-          <h2 id="decisions-title">The work behind the screen.</h2>
+          <p className="section-label">
+            {project.phase === "in-progress" ? "Design priorities" : "Engineering focus"}
+          </p>
+          <h2 id="decisions-title">
+            {project.phase === "in-progress"
+              ? "What the experience needs to get right."
+              : "The work behind the screen."}
+          </h2>
           <div>
             {project.details.engineering.map((item) => (
               <p key={item}>{item}</p>

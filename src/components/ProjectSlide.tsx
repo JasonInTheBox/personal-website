@@ -27,7 +27,10 @@ export function ProjectSlide({ project, index }: ProjectSlideProps) {
       </div>
 
       <div className="slide-side">
-        <p className="slide-tech">{project.technologies.slice(0, 4).join(" · ")}</p>
+        <p className="slide-tech">
+          {project.stackLabel ? `${project.stackLabel}: ` : ""}
+          {project.technologies.slice(0, 4).join(" · ")}
+        </p>
         <Link className="project-link" href={`/projects/${project.slug}`}>
           View project <ArrowUpRightIcon />
         </Link>

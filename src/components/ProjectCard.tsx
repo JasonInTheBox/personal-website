@@ -24,7 +24,9 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         <p className="index-project-description">{project.description}</p>
 
         <div className="index-project-built">
-          <p className="section-label">What I built</p>
+          <p className="section-label">
+            {project.phase === "in-progress" ? "What I’m building" : "What I built"}
+          </p>
           <p>{project.built}</p>
         </div>
 
@@ -35,7 +37,10 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </ul>
 
         <footer className="index-project-footer">
-          <p>{project.technologies.join(" / ")}</p>
+          <p>
+            {project.stackLabel ? `${project.stackLabel}: ` : ""}
+            {project.technologies.join(" / ")}
+          </p>
           <Link className="project-link" href={`/projects/${project.slug}`}>
             Learn more <ArrowUpRightIcon />
           </Link>
