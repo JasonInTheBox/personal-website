@@ -13,7 +13,7 @@ export function Footer() {
           <Link href="/projects">Projects</Link>
           <Link href="/about">About</Link>
           <Link href="/background">Background</Link>
-          <Link href="/resume">Resume</Link>
+          <Link href="/resume">Résumé</Link>
           <Link href="/contact">Contact</Link>
           <a href={siteConfig.linkedin} target="_blank" rel="noreferrer">LinkedIn ↗</a>
         </div>

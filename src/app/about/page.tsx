@@ -94,10 +94,9 @@ export default function AboutPage() {
   return (
     <main id="main-content" className="about-page">
       <header className="page-shell about-hero">
-        <p className="section-label">About</p>
         <div className="about-hero-layout">
           <div className="about-hero-copy">
-            <h1>I build by connecting the pieces.</h1>
+            <h1>About me</h1>
             <div className="about-introduction">
               <p>
                 I’m Junjie Liu, a recent UC Santa Barbara Computer Science graduate and a
@@ -126,8 +125,7 @@ export default function AboutPage() {
 
       <section className="page-shell about-focus" aria-labelledby="focus-title">
         <div className="about-section-heading">
-          <p className="section-label">What I bring</p>
-          <h2 id="focus-title">Curious about the details. Focused on the whole.</h2>
+          <h2 id="focus-title">What I bring</h2>
         </div>
         <div className="about-qualities">
           {qualities.map((quality) => (
@@ -141,8 +139,7 @@ export default function AboutPage() {
 
       <section className="page-shell about-detail-section" aria-labelledby="current-focus-title">
         <div className="about-section-heading">
-          <p className="section-label">What I’m currently doing</p>
-          <h2 id="current-focus-title">Exploring AI and machine learning.</h2>
+          <h2 id="current-focus-title">Currently learning AI and machine learning</h2>
         </div>
         <div className="about-detail-list">
           {currentFocusDetails.map((detail) => (
@@ -158,8 +155,7 @@ export default function AboutPage() {
 
       <section className="page-shell about-detail-section" aria-labelledby="personal-title">
         <div className="about-section-heading">
-          <p className="section-label">Beyond the work</p>
-          <h2 id="personal-title">A little more about me.</h2>
+          <h2 id="personal-title">Outside of work</h2>
         </div>
         <div className="about-detail-list">
           {personalDetails.map((detail) => (
@@ -175,8 +171,7 @@ export default function AboutPage() {
 
       <section className="page-shell about-detail-section" aria-labelledby="work-title">
         <div className="about-section-heading">
-          <p className="section-label">Work that shaped me</p>
-          <h2 id="work-title">Different jobs, shared lessons.</h2>
+          <h2 id="work-title">Work outside tech</h2>
         </div>
         <div className="about-detail-list">
           {workOutsideTech.map((job) => (
@@ -192,8 +187,7 @@ export default function AboutPage() {
 
       <section className="page-shell about-detail-section about-answers" aria-labelledby="answers-title">
         <div className="about-section-heading">
-          <p className="section-label">A few answers</p>
-          <h2 id="answers-title">What drives the way I work.</h2>
+          <h2 id="answers-title">A few answers</h2>
         </div>
         <div className="about-answer-list">
           {personalAnswers.map((item) => (
@@ -207,8 +201,7 @@ export default function AboutPage() {
 
       <section className="about-current">
         <div className="page-shell about-current-inner">
-          <p className="section-label">Right now</p>
-          <h2>Ready to contribute, learn, and keep building.</h2>
+          <h2>Open to full-time roles</h2>
           <p>
             I’m currently seeking a full-time software engineering opportunity where I
             can contribute across product and systems while continuing to grow alongside

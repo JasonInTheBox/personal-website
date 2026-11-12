@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRightIcon } from "@/components/Icons";
+import { ProjectMedia } from "@/components/ProjectMedia";
 import type { Project } from "@/data/projects";
 
 type ProjectCardProps = {
@@ -9,43 +10,23 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <article className={`index-project index-project-${index + 1}`}>
-      <header className="index-project-header">
-        <span aria-hidden="true">0{index + 1}</span>
-        <div>
-          <p>{project.eyebrow}</p>
-          <p className="index-project-timing">{project.dates} · {project.status}</p>
-        </div>
-      </header>
-      <div className="index-project-copy">
-        <h2>
-          <Link href={`/projects/${project.slug}`}>{project.title}</Link>
-        </h2>
-        <p className="index-project-description">{project.description}</p>
-
-        <div className="index-project-built">
-          <p className="section-label">
-            {project.phase === "in-progress" ? "What I’m building" : "What I built"}
-          </p>
-          <p>{project.built}</p>
-        </div>
-
-        <ul className="index-project-highlights" aria-label="Project highlights">
-          {project.highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
-          ))}
-        </ul>
-
-        <footer className="index-project-footer">
-          <p>
-            {project.stackLabel ? `${project.stackLabel}: ` : ""}
-            {project.technologies.join(" / ")}
-          </p>
-          <Link className="project-link" href={`/projects/${project.slug}`}>
-            Learn more <ArrowUpRightIcon />
-          </Link>
-        </footer>
-      </div>
-    </article>
+    <li>
+      <Link className="project-row" href={`/projects/${project.slug}`}>
+        <span className="project-row-number" aria-hidden="true">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <ProjectMedia project={project} sizes="(max-width: 720px) 100vw, 220px" />
+        <span className="project-row-copy">
+          <strong>{project.title}</strong>
+          <span>{project.description}</span>
+          <span className="project-row-tech">{project.technologies.slice(0, 4).join(" · ")}</span>
+        </span>
+        <span className="project-row-meta">
+          <span>{project.dates}</span>
+          <span className="status-badge">{project.status}</span>
+        </span>
+        <ArrowUpRightIcon className="project-row-arrow" />
+      </Link>
+    </li>
   );
 }

@@ -11,8 +11,7 @@ export default function BackgroundPage() {
   return (
     <main id="main-content" className="background-page">
       <header className="page-shell background-hero">
-        <p className="section-label">Education & technical background</p>
-        <h1>The foundation behind the projects.</h1>
+        <h1>Education &amp; background</h1>
         <p>
           Computer science fundamentals, practical tools, and the technologies I’ve used
           across full-stack, desktop, mobile, data, and AI-integrated work.
@@ -21,8 +20,7 @@ export default function BackgroundPage() {
 
       <section className="page-shell background-section education-detail" aria-labelledby="education-title">
         <div className="background-section-heading">
-          <p className="section-label">Education</p>
-          <h2 id="education-title">Where I studied.</h2>
+          <h2 id="education-title">Education</h2>
         </div>
         <div className="degree-detail">
           <span aria-hidden="true">UCSB</span>
@@ -36,8 +34,7 @@ export default function BackgroundPage() {
 
       <section className="page-shell background-section coursework" aria-labelledby="coursework-title">
         <div className="background-section-heading">
-          <p className="section-label">Coursework</p>
-          <h2 id="coursework-title">Relevant courses.</h2>
+          <h2 id="coursework-title">Relevant coursework</h2>
         </div>
         <div className="course-groups">
           {courseGroups.map((group) => (
@@ -60,14 +57,13 @@ export default function BackgroundPage() {
 
       <section className="page-shell background-section toolkit" aria-labelledby="toolkit-title">
         <div className="background-section-heading">
-          <p className="section-label">Technical toolkit</p>
-          <h2 id="toolkit-title">Languages, frameworks, and tools.</h2>
+          <h2 id="toolkit-title">Technical skills</h2>
         </div>
         <div className="toolkit-groups">
           {skillGroups.map((group) => (
             <article key={group.title}>
               <h3>{group.title}</h3>
-              <p>{group.items.join(" / ")}</p>
+              <p>{group.items.join(" · ")}</p>
             </article>
           ))}
         </div>
@@ -75,8 +71,7 @@ export default function BackgroundPage() {
 
       <section className="page-shell background-section spoken-languages" aria-labelledby="languages-title">
         <div className="background-section-heading">
-          <p className="section-label">Spoken languages</p>
-          <h2 id="languages-title">Languages I speak.</h2>
+          <h2 id="languages-title">Spoken languages</h2>
         </div>
         <ul className="spoken-language-list">
           {spokenLanguages.map((language) => (

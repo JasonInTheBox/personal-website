@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
+import { Inter, Newsreader } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const newsreader = Newsreader({ subsets: ["latin"], variable: "--font-newsreader" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://junjieliu.dev"),
@@ -29,7 +33,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${newsreader.variable}`}
+    >
       <body>
         <a className="skip-link" href="#main-content">
           Skip to main content

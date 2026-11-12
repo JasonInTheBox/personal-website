@@ -14,6 +14,8 @@ export type Project = {
   status: string;
   phase?: "in-progress";
   stackLabel?: string;
+  /** 16:10 screenshot in /public/projects, e.g. "/projects/league-assistant.png" */
+  image?: string;
   details: {
     problem: string;
     architecture: string[];
@@ -21,11 +23,12 @@ export type Project = {
   };
 };
 
+// The first three are featured on the home page.
 const projectOrder = [
   "league-assistant",
-  "mushroom-zi",
-  "direconnect",
   "planet-story-explorer",
+  "direconnect",
+  "mushroom-zi",
   "skillscan",
 ];
 
@@ -49,9 +52,10 @@ export const projects: Project[] = [
     highlights: ["Real-time event handling", "Desktop client integration", "Recommendation logic"],
     github: "https://github.com/JasonInTheBox/LeagueAssistant",
     website: "https://leaguecomp.vercel.app/",
+    image: "/projects/league-assistant.png",
     repositoryNote: "Private GitHub page - due to Riot developer policies, the source code cannot be publicized as the project is still in review.",
     dates: "August 2026 – Present",
-    status: "In progress - due to Riot developer policy, code is under review.",
+    status: "In progress",
     details: {
       problem:
         "Champion select moves quickly, while useful information about roles, runes, and matchups is spread across several sources. The project brings that context into a companion that responds to the local game client in real time.",
@@ -87,6 +91,7 @@ export const projects: Project[] = [
     ],
     highlights: ["35,000+ stories", "Geospatial search", "AI-assisted discovery"],
     github: null,
+    image: "/projects/planet-story-explorer.png",
     repositoryNote: "Academic project · source code cannot be released publicly",
     dates: "September 2025 – March 2026",
     status: "Completed",
@@ -131,6 +136,7 @@ export const projects: Project[] = [
     highlights: ["Email campaigns & delivery logs", "Queued campaign processing", "Business-owned customer data"],
     github: "https://github.com/JasonInTheBox/DireConnect",
     website: "https://direconnect.app/",
+    image: "/projects/direconnect.png",
     dates: "April 2026 – Present",
     status: "In progress",
     details: {
@@ -161,6 +167,7 @@ export const projects: Project[] = [
     technologies: ["React Native", "TypeScript", "Expo", "Firebase", "Flask", "Gemini"],
     highlights: ["Cross-platform mobile", "Cloud data", "AI integration"],
     github: null,
+    image: "/projects/skillscan.png",
     repositoryNote: "Academic project · source code cannot be released publicly",
     dates: "January 2025 – March 2026",
     status: "Completed",
@@ -196,6 +203,7 @@ export const projects: Project[] = [
       "Modern scenarios · planned",
     ],
     github: "https://github.com/JasonInTheBox/MushroomZi",
+    image: "/projects/mushroom-zi.png",
     references: [
       {
         label: "Charles Muller’s translation of the Analects",

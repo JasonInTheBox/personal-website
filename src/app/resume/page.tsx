@@ -29,7 +29,6 @@ export default function ResumePage() {
             />
           </figure>
           <div>
-            <p className="section-label">Web résumé</p>
             <h1>{siteConfig.name}</h1>
             <p className="resume-role">{siteConfig.role}</p>
           </div>
@@ -48,7 +47,7 @@ export default function ResumePage() {
         <section className="resume-section resume-summary" aria-labelledby="resume-summary-title">
           <p className="resume-section-label">Profile</p>
           <div>
-            <h2 id="resume-summary-title">Software engineer with a whole-system perspective.</h2>
+            <h2 className="visually-hidden" id="resume-summary-title">Profile</h2>
             <p>
               Recent UC Santa Barbara Computer Science graduate building full-stack,
               desktop, mobile, data, and AI-integrated applications. Interested in the

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local design / agent tooling (not part of the site)
+/.impeccable/
+/.claude/
+/.playwright-mcp/

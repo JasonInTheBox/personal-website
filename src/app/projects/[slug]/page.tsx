@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRightIcon, GitHubIcon } from "@/components/Icons";
+import { ProjectMedia } from "@/components/ProjectMedia";
 import { getProject, projects } from "@/data/projects";
 
 type ProjectPageProps = {
@@ -45,52 +46,56 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <span>{project.title}</span>
         </div>
         <p className="case-eyebrow">{project.eyebrow}</p>
-        <p className="case-meta">{project.dates} · {project.status}</p>
-        {project.github || project.website || project.repositoryNote ? (
-          <section className="case-links" aria-label="Project links">
-            {project.github ? (
-              <a href={project.github} target="_blank" rel="noreferrer">
-                <GitHubIcon /> View repository <ArrowUpRightIcon />
-              </a>
-            ) : project.repositoryNote ? (
-              <span className="repository-note">{project.repositoryNote}</span>
-            ) : null}
-            {project.website ? (
-              <a href={project.website} target="_blank" rel="noreferrer">
-                Visit website <ArrowUpRightIcon />
-              </a>
-            ) : null}
-          </section>
-        ) : null}
         <h1>{project.title}</h1>
         <p className="case-summary">{project.description}</p>
-        <ul
-          className="case-tech"
-          aria-label={project.stackLabel ?? "Technologies used"}
-        >
-          {project.technologies.map((technology) => (
-            <li key={technology}>{technology}</li>
-          ))}
-        </ul>
-        
+        <dl className="case-facts">
+          <div>
+            <dt>Timeline</dt>
+            <dd>{project.dates}</dd>
+          </div>
+          <div>
+            <dt>Status</dt>
+            <dd>
+              <span className="status-badge">{project.status}</span>
+            </dd>
+          </div>
+          <div>
+            <dt>{project.stackLabel ?? "Stack"}</dt>
+            <dd>{project.technologies.join(", ")}</dd>
+          </div>
+          <div>
+            <dt>Links</dt>
+            <dd className="case-fact-links">
+              {project.website ? (
+                <a href={project.website} target="_blank" rel="noreferrer">
+                  Live site <ArrowUpRightIcon />
+                </a>
+              ) : null}
+              {project.github && !project.repositoryNote ? (
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <GitHubIcon /> Code <ArrowUpRightIcon />
+                </a>
+              ) : null}
+              {project.repositoryNote ? (
+                <span className="case-fact-note">{project.repositoryNote}</span>
+              ) : null}
+              {!project.website && !project.github && !project.repositoryNote ? (
+                <span>Coming soon</span>
+              ) : null}
+            </dd>
+          </div>
+        </dl>
+        <ProjectMedia project={project} sizes="(max-width: 1180px) 100vw, 1180px" priority />
       </header>
 
       <div className="page-shell case-content">
         <section aria-labelledby="problem-title">
-          <p className="section-label">The problem</p>
-          <h2 id="problem-title">Why this needed to exist.</h2>
+          <h2 id="problem-title">The problem</h2>
           <p className="case-large-copy">{project.details.problem}</p>
         </section>
 
         <section className="case-built" aria-labelledby="built-title">
-          <p className="section-label">
-            {project.phase === "in-progress" ? "What I’m building" : "What I built"}
-          </p>
-          <h2 id="built-title">
-            {project.phase === "in-progress"
-              ? "A bilingual path into the Analects."
-              : "From interface to underlying system."}
-          </h2>
+          <h2 id="built-title">{project.phase === "in-progress" ? "What I’m building" : "What I built"}</h2>
           <p>{project.built}</p>
           {project.references?.map((reference) => (
             <p className="case-reference" key={reference.url}>
@@ -109,14 +114,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <section className="architecture" aria-labelledby="architecture-title">
           <div>
-            <p className="section-label">
-              {project.phase === "in-progress" ? "Planned system outline" : "System outline"}
-            </p>
-            <h2 id="architecture-title">
-              {project.phase === "in-progress"
-                ? "How the pieces are intended to connect."
-                : "How the pieces connect."}
-            </h2>
+            <h2 id="architecture-title">{project.phase === "in-progress" ? "Planned system outline" : "System outline"}</h2>
           </div>
           <ol>
             {project.details.architecture.map((item, index) => (
@@ -129,14 +127,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </section>
 
         <section className="decisions" aria-labelledby="decisions-title">
-          <p className="section-label">
-            {project.phase === "in-progress" ? "Design priorities" : "Engineering focus"}
-          </p>
-          <h2 id="decisions-title">
-            {project.phase === "in-progress"
-              ? "What the experience needs to get right."
-              : "The work behind the screen."}
-          </h2>
+          <h2 id="decisions-title">{project.phase === "in-progress" ? "Design priorities" : "Engineering focus"}</h2>
           <div>
             {project.details.engineering.map((item) => (
               <p key={item}>{item}</p>
@@ -146,7 +137,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         {project.github || project.website || project.repositoryNote ? (
           <section className="case-links" aria-label="Project links">
-            {project.github ? (
+            {project.github && !project.repositoryNote ? (
               <a href={project.github} target="_blank" rel="noreferrer">
                 <GitHubIcon /> View repository <ArrowUpRightIcon />
               </a>
@@ -164,7 +155,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
       <nav className="more-projects" aria-labelledby="more-projects-title">
         <div className="page-shell more-projects-inner">
-          <p className="section-label" id="more-projects-title">Explore other projects</p>
+          <h2 id="more-projects-title">Other projects</h2>
           <div className="more-project-grid">
             {otherProjects.map((otherProject) => {
               const projectIndex = projects.findIndex((item) => item.slug === otherProject.slug);

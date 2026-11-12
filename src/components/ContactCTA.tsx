@@ -6,7 +6,6 @@ export function ContactCTA() {
   return (
     <section className="contact-cta" id="contact" aria-labelledby="contact-title">
       <div className="page-shell contact-cta-inner">
-        <p className="section-label">Say hello</p>
         <h2 id="contact-title">Looking for a new grad engineer?</h2>
         <p>
           I’m currently seeking full-time software engineering opportunities and would

@@ -1,55 +1,42 @@
 import Link from "next/link";
-import { ArrowUpRightIcon, GitHubIcon, LinkedInIcon } from "@/components/Icons";
+import { ArrowUpRightIcon, GitHubIcon, LinkedInIcon, MailIcon } from "@/components/Icons";
 import { siteConfig } from "@/data/site";
+
+const coreStack = ["TypeScript", "React", "Node.js", "Python", "PostgreSQL", "AWS", "Electron"];
 
 export function Hero() {
   return (
-    <section className="home-hero page-shell" id="top" aria-labelledby="hero-title">
-      <div className="hero-name-block">
-        <p className="hero-role">{siteConfig.role}</p>
-        <h1 id="hero-title">
-          <span>Junjie</span>
-          <span className="hero-last-name">Liu</span>
-        </h1>
-      </div>
-
-      <div className="hero-detail">
-        <p className="hero-school">Qualifications at a glance</p>
-        <p className="hero-summary">
-          I build full-stack and desktop software across the interface, API, data,
-          and cloud layers—with project work in real-time integrations, geospatial
-          search, and campaign systems.
-        </p>
-        <dl className="hero-credentials">
-          <div>
-            <dt>Core stack &amp; tools</dt>
-            <dd>
-              TypeScript · JavaScript · Python · Java · C++ · React · Next.js ·
-              Node.js · Express.js · PostgreSQL · AWS · Docker · Git · CI/CD · REST
-              APIs · WebSockets · Jest · Playwright
-            </dd>
-          </div>
-        </dl>
-        <p className="hero-availability">
-          <span aria-hidden="true" />
-          <strong>Seeking full-time software engineering opportunities.</strong>
-        </p>
-      </div>
-
-      <div className="hero-actions" aria-label="Portfolio links">
-        <Link className="text-link text-link-strong" href="/resume">
-          View web résumé <ArrowUpRightIcon />
+    <section className="hero page-shell" id="top" aria-labelledby="hero-title">
+      <h1 id="hero-title">
+        <span className="hero-name">Junjie Liu</span> builds full&#8209;stack and desktop
+        software, from the interface to the cloud.
+      </h1>
+      <p className="hero-lede">
+        Recent UC Santa Barbara Computer Science graduate. Project work in real-time
+        desktop integrations, geospatial search, and campaign systems.
+      </p>
+      <p className="hero-status">
+        <span aria-hidden="true" />
+        Open to full-time software engineering roles
+      </p>
+      <div className="hero-cta" aria-label="Portfolio links">
+        <Link className="button-primary" href="/resume">
+          View résumé <ArrowUpRightIcon />
         </Link>
-        <Link className="text-link" href="/projects">
-          Projects <ArrowUpRightIcon />
-        </Link>
+        <a className="text-link" href={`mailto:${siteConfig.email}`}>
+          <MailIcon /> Email
+        </a>
         <a className="text-link" href={siteConfig.github} target="_blank" rel="noreferrer">
-          <GitHubIcon /> GitHub <ArrowUpRightIcon />
+          <GitHubIcon /> GitHub
         </a>
         <a className="text-link" href={siteConfig.linkedin} target="_blank" rel="noreferrer">
-          <LinkedInIcon /> LinkedIn <ArrowUpRightIcon />
+          <LinkedInIcon /> LinkedIn
         </a>
       </div>
+      <p className="hero-stack">
+        <span className="visually-hidden">Core stack: </span>
+        {coreStack.join(" · ")}
+      </p>
     </section>
   );
 }

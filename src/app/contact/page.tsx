@@ -13,8 +13,7 @@ export default function ContactPage() {
   return (
     <main id="main-content" className="contact-page">
       <header className="page-shell contact-page-hero">
-        <p className="section-label">Contact</p>
-        <h1>Let’s see what changes we’re looking to make.</h1>
+        <h1>Get in touch</h1>
         <p>
           I’m currently seeking full-time software engineering opportunities and would
           be glad to hear about a role, a project, or the work your team is doing.
@@ -23,8 +22,7 @@ export default function ContactPage() {
 
       <section className="page-shell contact-channels" aria-labelledby="contact-options-title">
         <div className="contact-page-heading">
-          <p className="section-label">Reach out</p>
-          <h2 id="contact-options-title">Choose the channel that works for you.</h2>
+          <h2 id="contact-options-title">Ways to reach me</h2>
         </div>
 
         <div className="contact-channel-list">
@@ -50,14 +48,13 @@ export default function ContactPage() {
 
       <section className="contact-page-footer">
         <div className="page-shell contact-page-footer-inner">
-          <p className="section-label">Explore first</p>
-          <h2>Want a little more context?</h2>
+          <h2>More about my work</h2>
           <div>
             <Link className="text-link" href="/projects">
               Browse my projects <ArrowUpRightIcon />
             </Link>
             <Link className="text-link" href="/resume">
-              Read my resume <ArrowUpRightIcon />
+              Read my résumé <ArrowUpRightIcon />
             </Link>
           </div>
         </div>
